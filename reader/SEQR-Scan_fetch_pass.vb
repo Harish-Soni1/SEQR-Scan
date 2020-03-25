@@ -6,7 +6,7 @@ Imports System.IO
 Imports System.Text
 Imports System.Net.Mail
 Public Class password
-    Dim cn As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+    Dim cn As New MySqlConnection("server=localhost;userid="";password="";database=qr")
     Dim RandNumber As String
     Dim em As String
     Dim dr1 As MySqlDataReader
@@ -18,7 +18,7 @@ Public Class password
     End Sub
     Public Sub select2()
         Try
-            Dim contan As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+            Dim contan As New MySqlConnection("server=localhost;userid="";password="";database=qr")
             contan.Open()
             Dim s As String = "select email from register where name='" + TextBox1.Text + "'"
             Dim ci1 As New MySqlCommand(s, contan)
@@ -54,12 +54,12 @@ Public Class password
             Dim smtp_server As New SmtpClient
             Dim mail As New MailMessage
             smtp_server.UseDefaultCredentials = False
-            smtp_server.Credentials = New Net.NetworkCredential("stony1575@gmail.com", "Tony@123@")
+            smtp_server.Credentials = New Net.NetworkCredential("mail ID", "mail password")
             smtp_server.Port = 587
             smtp_server.EnableSsl = True
             smtp_server.Host = "smtp.gmail.com"
             mail = New MailMessage()
-            mail.From = New MailAddress("stony1575@gmail.com")
+            mail.From = New MailAddress("mail ID")
             mail.To.Add(TextBox2.Text)
             mail.Subject = "One Time Password for Verification"
             mail.IsBodyHtml = False
@@ -99,7 +99,7 @@ Public Class password
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        Dim cnh1 As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+        Dim cnh1 As New MySqlConnection("server=localhost;userid="";password="";database=qr")
         cnh1.Open()
         Dim q As String = "select * from register where first_name='" + TextBox1.Text + "'"
         Dim cmd1 As New MySqlCommand(q, cnh1)
@@ -118,7 +118,7 @@ Public Class password
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         cn.Close()
         Try
-            Dim cnh2 As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+            Dim cnh2 As New MySqlConnection("server=localhost;userid="";password="";database=qr")
             cnh2.Open()
             Dim q As String = "select password from register where first_name='" + TextBox1.Text + "'"
             Dim cmd1 As New MySqlCommand(q, cnh2)
@@ -137,7 +137,7 @@ Public Class password
     End Sub
 
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
-        Dim cnh1 As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+        Dim cnh1 As New MySqlConnection("server=localhost;userid="";password="";database=qr")
         cnh1.Open()
         Dim q As String = "select * from register where email='" + TextBox2.Text + "'"
         Dim cmd1 As New MySqlCommand(q, cnh1)
