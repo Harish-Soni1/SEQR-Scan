@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Text.RegularExpressions
 Public Class register
-    Dim cn1 As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+    Dim cn1 As New MySqlConnection("server=localhost;userid="";password="";database=qr")
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         cn1.Open()
         Dim gender As String
@@ -35,7 +35,7 @@ Public Class register
     End Sub
 
     Private Sub fntext_TextChanged(sender As Object, e As EventArgs) Handles fntext.TextChanged
-        Dim cnh As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+        Dim cnh As New MySqlConnection("server=localhost;userid="";password="";database=qr")
         cnh.Open()
         Dim q As String = "select * from membr where name='" + fntext.Text + "'"
         Dim cmd1 As New MySqlCommand(q, cnh)
