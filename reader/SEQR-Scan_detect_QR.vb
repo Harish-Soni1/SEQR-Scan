@@ -10,8 +10,8 @@ Public Class scan
     Dim dr1 As MySqlDataReader
     Dim sno As String
     Dim query As String = ""
-    Dim cn2 As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
-    Dim contan As New MySqlConnection("server=127.0.0.1;userid=root;password=harish#1;database=qr")
+    Dim cn2 As New MySqlConnection("server=localhost;userid="";password="";database=qr")
+    Dim contan As New MySqlConnection("server=localhost;userid="";password="";database=qr")
 
     Private Sub scan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cn2.Open()
@@ -48,7 +48,7 @@ Public Class scan
     End Sub
     Public Sub select1()
         Try
-            Dim contan As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+            Dim contan As New MySqlConnection("server=localhost;userid="";password="";database=qr")
             contan.Open()
             Dim c() As String = DecodeTextBox.Text.Split("|")
             Dim a As String = c(0)
@@ -62,7 +62,7 @@ Public Class scan
     End Sub
     Public Sub select2()
         Try
-            Dim contan As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+            Dim contan As New MySqlConnection("server=localhost;userid="";password="";database=qr")
             contan.Open()
             Dim c() As String = DecodeTextBox.Text.Split("|")
             Dim a As String = c(0)
@@ -91,7 +91,7 @@ Public Class scan
         cn2.Close()
         select1()
         contan.Open()
-        Dim contan1 As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+        Dim contan1 As New MySqlConnection("server=localhost;userid="";password="";database=qr")
         contan1.Open()
         Try
             Dim c() As String = DecodeTextBox.Text.Split("|")
