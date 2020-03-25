@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class log_in
-    Dim cn As New MySqlConnection("server=127.0.0.1;user id=root;password=harish#1;database=qr")
+    Dim cn As New MySqlConnection("server=localhost;user id="";password="";database=qr")
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim u As String = TextBox1.Text
