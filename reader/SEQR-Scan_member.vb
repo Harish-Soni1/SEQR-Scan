@@ -5,7 +5,7 @@ Imports System.Net
 Imports System.Web
 Imports System.Net.Mail
 Public Class mmenu
-    Dim cn As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+    Dim cn As New MySqlConnection("server=localhost;userid="";password="";database=qr")
     Dim qrg As New MessagingToolkit.QRCode.Codec.QRCodeEncoder
     Dim dr1 As MySqlDataReader
     Dim d1 As String
@@ -14,7 +14,7 @@ Public Class mmenu
         cn.Open()
     End Sub
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        Dim cn1 As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+        Dim cn1 As New MySqlConnection("server=localhost;userid="";password="";database=qr")
         cn1.Open()
         Dim q As String = "select * from membr where name='" + TextBox1.Text + "'"
         Dim cmd1 As New MySqlCommand(q, cn1)
@@ -162,7 +162,7 @@ Public Class mmenu
     End Sub
 
     Private Sub TextBox9_TextChanged(sender As Object, e As EventArgs) Handles TextBox9.TextChanged
-        Dim cn1 As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+        Dim cn1 As New MySqlConnection("server=localhost;userid="";password="";database=qr")
         cn1.Open()
         Dim q As String = "select * from membr where id_number='" + TextBox9.Text + "'"
         Dim cmd1 As New MySqlCommand(q, cn1)
@@ -184,7 +184,7 @@ Public Class mmenu
         home.Show()
     End Sub
     Function select1()
-        Dim contan As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+        Dim contan As New MySqlConnection("server=localhost;userid="";password="";database=qr")
         contan.Open()
         Try
             d1 = DateTimePicker1.Value.Date.ToString("yyyy-MM-dd")
@@ -200,7 +200,7 @@ Public Class mmenu
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         select1()
         If dr1.HasRows Then
-            Dim cn1 As New MySqlConnection("server=localhost;userid=root;password=harish#1;database=qr")
+            Dim cn1 As New MySqlConnection("server=localhost;userid="";password="";database=qr")
             cn1.Open()
             Try
                 Dim res = Path.GetRandomFileName().Replace(".", vbEmpty)
@@ -236,13 +236,13 @@ Public Class mmenu
             Try
                 Dim smtp_server As New SmtpClient
                 smtp_server.UseDefaultCredentials = False
-                smtp_server.Credentials = New Net.NetworkCredential("stony1575@gmail.com", "Tony@123@")
+                        smtp_server.Credentials = New Net.NetworkCredential("mail ID", "mail password")
                 smtp_server.Port = 587
                 smtp_server.EnableSsl = True
                 smtp_server.Host = "smtp.gmail.com"
                 Dim sentfeed As New MailMessage
-                sentfeed.From = New MailAddress("stony1575@gmail.com")
-                sentfeed.To.Add("soni277@gmail.com")
+                        sentfeed.From = New MailAddress("mail ID")
+                        sentfeed.To.Add("mail ID")
                 sentfeed.Subject = "Feedback of SEQR-Scan"
                 sentfeed.IsBodyHtml = False
                 sentfeed.Body = RichTextBox1.Text
